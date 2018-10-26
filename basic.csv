@@ -1,0 +1,4 @@
+# Basic environment variables that are often altered by users, developers, and
+# system administrators.
+variable_name;type;description
+PATH;path;List of folders where unqualified program names will be searched for.
