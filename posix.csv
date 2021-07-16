@@ -1,0 +1,3 @@
+Variable,TypeKind,Description
+__META__,COMMENT,"Basic environment variables that are often altered by users, developers, and system administrators."
+PATH,path,"List of folders where unqualified program names will be searched for."

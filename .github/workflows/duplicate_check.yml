@@ -1,0 +1,26 @@
+name: Duplicate check
+
+on:
+  push:
+    paths:
+      - ".github/workflows/duplicate_check.yml"
+      - "scripts/duplicate_check.py"
+      - "*.csv"
+  pull_request:
+    paths:
+      - ".github/workflows/duplicate_check.yml"
+      - "scripts/duplicate_check.py"
+      - "*.csv"
+
+jobs:
+  duplicate_check:
+    name: "Duplicate check"
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.8"
+      - name: "Run the check"
+        run: |
+          ./scripts/duplicate_check.py
