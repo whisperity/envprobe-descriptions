@@ -1,0 +1,60 @@
+name: Modify variables
+description: Suggest changes to the knowledge base (for a specific variable)
+
+body:
+  - type: dropdown
+    attributes:
+      label: Action
+      description: |
+        What kind of action are you reporting?
+      options:
+        - "➕ Add"
+        - "➖ Remove"
+        - "📝 Change"
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Name
+      description: |
+        The name of the environment variable, e.g. `MY_VARIABLE_NAME`.
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: Type of the variable
+      description: |
+        The type of the environment variable (corresponding to variable types implemented in [Envprobe](http://github.com/whisperity/Envprobe))
+      options:
+        - "String"
+        - "Number"
+        - ":-array (colon)"
+        - ";-array (semicolon)"
+        - "PATH-like"
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Comment
+      description: |
+        The summary comment for the variable, which will appear to users when requested.
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Group of the variable
+      description: |
+        The group of the variable (e.g. `posix`) which we should add or move it to.
+        Only needed for **new variables**.
+        
+        If you are suggesting a brand new group, please submit a separate ticket about it!
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Additional comments
+      description: |
+        Any other comments you would like to add to the report.
+        Please provide *some* proof, e.g. a documentation link!
+    validations:
+      required: true

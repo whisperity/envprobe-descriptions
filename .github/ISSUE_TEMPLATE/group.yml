@@ -1,0 +1,37 @@
+name: Modify groups
+description: Suggest changes to the knowledge base (for a group)
+
+body:
+  - type: dropdown
+    attributes:
+      label: Action
+      description: |
+        What kind of action are you reporting?
+      options:
+        - "➕ Add"
+        - "➖ Remove"
+        - "📝 Change"
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Name
+      description: |
+        The name of the group (e.g. `posix`) which you are suggesting changes for.
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Comment
+      description: |
+        The summary comment for the group, which will appear to users when requested.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Additional comments
+      description: |
+        Any other comments you would like to add to the report.
+        Please provide *some* proof, e.g. a documentation link!
+    validations:
+      required: true
